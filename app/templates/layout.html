@@ -20,6 +20,7 @@
         {% include 'navbar.html' %}
         {% endblock %}
 <!-- get flashed messages -->
+       <div class=" text-light btn-success">
         {% with messages = get_flashed_messages(with_categories = true) %}
         {% if messages %}
 
@@ -32,6 +33,9 @@
 
         
         {% endwith %}
+       </div>
+
+        <!-- flash -->
 
         {% block content %}
 

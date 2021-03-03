@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, BooleanField, PasswordField, SubmitField
+from wtforms import StringField,IntegerField , BooleanField, PasswordField, SubmitField
 from wtforms.validators import Required, Length, Email, EqualTo
 
 class RegForm(FlaskForm):
@@ -14,3 +14,12 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators=[Required()])
     remember = BooleanField('Remember me')
     submit =SubmitField('Login')
+
+class OrderForm(FlaskForm):
+    email = StringField('Enter email to recieve reciept', validators=[Required(), Email()] )
+    pizza = StringField('Pizza', validators=[Required()])
+    size = StringField('Size', validators=[Required()])
+    crust = StringField('Crust', validators=[Required()])
+    toppings = StringField('Toppings', validators=[Required()])
+    no_of_pizzas = IntegerField('How many Pizzas?', validators=[Required()])
+    submit = SubmitField('Order Now')

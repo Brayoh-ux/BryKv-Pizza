@@ -18,9 +18,16 @@ def register():
     title = 'Pizza Register'
     return render_template('register.html', title = title, form = form)
 
-@app.route('/login')
+@app.route('/login', methods =['GET', 'POST'])
 def login():
     form = LoginForm()
+    if form.validate_on_submit():
+        if form.email.data =='brayo@g.com' and form.password.data == 'password1':
+            flash(' login successful!','success')
+            return redirect(url_for('home'))
+        else:
+            flash('Invalid password or email!','danger')
+
     title = 'Pizza login'
     return render_template('login.html', form = form, title = title)
 

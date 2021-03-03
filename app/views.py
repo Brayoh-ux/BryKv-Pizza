@@ -1,6 +1,6 @@
 from flask import render_template,flash, url_for, redirect
 from app import app
-from app.forms import RegForm, LoginForm
+from app.forms import RegForm, LoginForm, OrderForm
 
 
 @app.route('/')
@@ -35,6 +35,12 @@ def login():
 def about():
     return render_template('about.html')
 
-@app.route('/order')
+@app.route('/order', methods =['GET', 'POST'])
 def order():
-    return render_template('order.html')
+    form = OrderForm()
+    if form.validate_on_submit():
+        flash(f'Order of {form.pizza.data} succeffull! \n Reciept sent to {form.email.data}')
+        return redirect(url_for('order'))
+
+    title = 'Order Form'
+    return render_template('order.html', form =  form, title = title)

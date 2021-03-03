@@ -8,35 +8,49 @@
 
 <br>
 <body>
-   <div class="row bg-light">
+    
+   <div class="row text-light " style="background-color: rgba(0, 0, 0, 0.5); margin-top: 0px; font-family: 'Kalam', cursive; font-size: 3vmin;" >
        <div class="col-md-3"></div>
         <div class="col-md-6">
             <form method = 'POST' action = ''>
                 {{ form.hidden_tag() }}
                 
                 <fieldset class="form-group">
-                    <legend class="border-bottom pt-2 pb-2 mb-2 ">ORDER NOW </legend>
-                <div class="form-group">
+                    <br>
+                    <legend class="border-bottom pt-2 pb-2 mb-2 text-center text-light " style="font-weight: 800;">ORDER NOW </legend>
+                   
+                <div class="form-group"><br>
                     {{form.email.label(class='form-label' )}}
                     {{form.email(class="form-control form-control-sm" )}}
                 </div>
-                <div class="form-group">
+                <div class="form-group"><br>
                     {{form.pizza.label(class='form-label' )}}
                     {{form.pizza(class="form-control form-control-sm" )}}
                 </div>
                 <div class="form-group">
+                    <br>
                     {{form.size.label(class='form-label' )}}
+                   
                     {{form.size(class="form-control form-control-sm" )}}
+                     <div id="size">
+                                    <label for="pizzaSize">Size</label>
+                                    <select class="custom-select" id="pizzaSize">
+                                        <option label="Choose"></option>
+                                        <option label="Small" value="100"></option>
+                                        <option label="Medium" value="200"></option>
+                                        <option label="Large" value="300"></option>
+                                    </select>
+                                </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group"><br>
                     {{form.crust.label(class='form-label' )}}
                     {{form.crust(class="form-control form-control-sm" )}}
                 </div>
-                <div class="form-group">
+                <div class="form-group"><br>
                     {{form.toppings.label(class='form-label' )}}
                     {{form.toppings(class="form-control form-control-sm" )}}
                 </div>
-                <div class="form-group">
+                <div class="form-group"><br>
                     {{form.no_of_pizzas.label(class='form-label' )}}
                     {{form.no_of_pizzas(class="form-control form-control-sm" )}}
                 </div>

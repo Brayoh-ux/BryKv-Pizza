@@ -8,7 +8,7 @@
     <div class="content">
         <div class="display1">
             {% for product in products %}
-            <img src="{{url_for('static', filename='pizza pics/California style pizza .webp')}}" alt="">    
+            <img src="{{url_for('static', filename=product.image_file)}}" alt="">    
             <h2>{{ product.name }}</h2><br>
             <p> {{ product.description }}</p>
             {% endfor %}

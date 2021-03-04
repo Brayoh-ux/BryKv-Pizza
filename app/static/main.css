@@ -4,18 +4,20 @@ body{
     background-color: aqua;
 }
 
-.nav-bar{
-    text-decoration: none;
-}
-
-.nav-bar > ul{
-    display: flex;
-}
-
-.nav-bar> ul>li{
-    padding-left: 2em;
+.content{
+    display: block;
 }
 
 .display1{
-    display: flex;
+    display: block;
+    margin-top: 8em;
+}
+
+.display1> img{
+    width: 34em;
+    height: 20em;
+}
+
+.display1 >p{
+    text-align: center;
 }

@@ -1,12 +1,18 @@
-from flask import render_template,flash, url_for, redirect
-from app import app
+from flask import render_template,flash, url_for, redirect, request
+from app import app, db 
+from app.models import Pizza
 from app.forms import RegForm, LoginForm
 
+POST = 'POST'
+GET = 'GET'
 
 @app.route('/')
 def home():
-    title = 'Pizza  app project'
-    return render_template('home.html', title =title)
+    if request.method == GET:
+        products = Pizza.query.all()
+        return render_template('home.html', products = products)
+    else:
+        print('***** POST REQUEST *****')
 
 @app.route('/register', methods = ['GET', 'POST'])
 def register():
@@ -14,20 +20,17 @@ def register():
     if form.validate_on_submit():
         flash(f'Account created for {form.username.data}! ','success')
         return redirect(url_for('home'))
-
-    title = 'Pizza Register'
-    return render_template('register.html', title = title, form = form)
+    return render_template('register.html', title = 'registration', form = form)
 
 @app.route('/login')
 def login():
     form = LoginForm()
-    title = 'Pizza login'
-    return render_template('login.html', form = form, title = title)
+    return render_template('login.html', form = form, title = 'login')
 
 @app.route('/about')
 def about():
-    return render_template('about.html')
+    return render_template('about.html',title='about')
 
-@app.route('/order')
-def order():
-    return render_template('order.html')
+@app.route('/cart')
+def cart():
+    return render_template('cart.html',title = 'cart')

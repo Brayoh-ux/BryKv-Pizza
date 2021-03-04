@@ -18,10 +18,10 @@
         <label class="logo">PIZZA HUB</label>
         <ul>
             <li ><a class="active" href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/order">Order</a></li>
-            <li><a href="/register">Register</a></li>
-            <li><a href="/login">Login</a></li>
+            <li><a href=" {{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('cart') }}">Cart</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
         </ul>
     </nav>
     

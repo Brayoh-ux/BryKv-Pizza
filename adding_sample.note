@@ -1,0 +1,15 @@
+Activate virtualenv in manage.py directory
+
+from app import db
+from app.modules import Pizza
+
+[if sessions.db is not created]
+	db.create_all()
+[endif]
+
+sample1 = Pizza(id=1, name='pizza', description='Short desc', image_file='folder/image.png')
+
+db.session.add(sample1)
+db.session.commit()
+exit()
+

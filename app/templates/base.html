@@ -1,0 +1,35 @@
+<html>
+    <head>
+        {% if not title %}
+            <title>PizzaShop</title>
+        {% else %}
+
+            <title>
+                PizzaShop |{{ title }} 
+            </title>
+        {% endif %}
+
+        {% block head %}
+        {% endblock head %}
+        <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">  
+    </head>
+    <!-- body -->
+    <body>
+        <div class="nav-bar">
+            <ul>
+                <li>
+                    <a href="{{ url_for('home') }} "> Home</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('cart') }} "> Cart</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('about') }} "> About</a>
+                </li>
+            </ul>
+        </div>
+        <!-- body content -->
+        {% block content %}
+        {% endblock %}      
+    </body>
+</html>

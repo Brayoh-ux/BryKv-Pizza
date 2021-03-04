@@ -1,0 +1,21 @@
+body{
+    height: auto;
+    width: 100vh;
+    background-color: aqua;
+}
+
+.nav-bar{
+    text-decoration: none;
+}
+
+.nav-bar > ul{
+    display: flex;
+}
+
+.nav-bar> ul>li{
+    padding-left: 2em;
+}
+
+.display1{
+    display: flex;
+}

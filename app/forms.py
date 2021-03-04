@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField,IntegerField , BooleanField, PasswordField, SubmitField
+from wtforms import StringField,IntegerField ,SelectField , BooleanField, PasswordField, SubmitField
 from wtforms.validators import Required, Length, Email, EqualTo
 
 class RegForm(FlaskForm):
@@ -17,9 +17,9 @@ class LoginForm(FlaskForm):
 
 class OrderForm(FlaskForm):
     email = StringField('Enter email to recieve reciept', validators=[Required(), Email()] )
-    pizza = StringField('Pizza', validators=[Required()])
-    size = StringField('Size', validators=[Required()])
-    crust = StringField('Crust', validators=[Required()])
-    toppings = StringField('Toppings', validators=[Required()])
+    pizza = SelectField('Choose Pizza', choices=[('Grilled Chicken'), ('Chicken Wrap Special'),('Ice-cream Summer') , ('Veggie Special'), ('Delux Cheese Bugger')], validators=[Required()])
+    size = SelectField('Choose size', choices = [('small'), ('medium'), ('large')], validators=[Required()])
+    crust = SelectField('Choose Crust',choices=[('Crispy'), ('Stuffed'), ('Glutten Free')] ,validators=[Required()])
+    toppings = SelectField('Choose Toppings', choices=[('Mushrooms'), ('Blackolives'), ('cheese'), ('Green Pepper')], validators=[Required()])
     no_of_pizzas = IntegerField('How many Pizzas?', validators=[Required()])
     submit = SubmitField('Order Now')

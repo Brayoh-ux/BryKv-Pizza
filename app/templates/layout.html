@@ -6,6 +6,7 @@
 
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        
         {% if title %}
         <title>Pizza app - {{title}} </title>
 
@@ -19,6 +20,7 @@
         {% include 'navbar.html' %}
         {% endblock %}
 <!-- get flashed messages -->
+       <div class=" text-light btn-success">
         {% with messages = get_flashed_messages(with_categories = true) %}
         {% if messages %}
 
@@ -31,6 +33,9 @@
 
         
         {% endwith %}
+       </div>
+
+        <!-- flash -->
 
         {% block content %}
 

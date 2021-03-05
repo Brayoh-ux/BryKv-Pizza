@@ -19,10 +19,9 @@
 
                 {{form.username(class="form-control form-control-sm is-invalid" )}}
                 <div class="invalid-feedback">
-                    {% for error in form.username.errors  %}
-
-                        <span>{{error}} </span>
-                    {% endfor %}
+                    {% for error in form.username.errors %}
+                    <span style="color: red;">{{ error }}</span>
+            {% endfor %}
                 </div>
                 {% else%}
                 {{form.username(class="form-control form-control-sm" )}}
@@ -79,7 +78,7 @@
                     {% endfor %}
                 </div>
                 {% else%}
-                {{form.password(class="form-control form-control-sm")}}
+                {{form.password_confirm(class="form-control form-control-sm")}}
                 {% endif %}
              </div>
          </fieldset>

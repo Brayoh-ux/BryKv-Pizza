@@ -1,5 +1,195 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<p>Welocome home</p>
+<div class="container-fluid">
+    <div class="contain">
+        <div class="box">
+            <div class="icon"></div>
+            <div class="content">
+                <h3>Chicken Grilled Pizza</h3>
+                <img src="../static/img/pizza2.png" width="120%" alt="">
+                  <a href="{{ url_for('order') }}">Order Now</a>
+            </div>
+    
+        </div>
+        <div class="box">
+            <div class="icon"></div>
+            <div class="content">
+                <h3>Chicken wrap special</h3>
+                <img src="../static/img/wrap.jpg" width="120%" alt="">  
+              </div>
+    
+        </div>
+        <div class="box">
+            <div class="icon"></div>
+            <div class="content">
+                <h3>Ice-cream Summer</h3>
+                <img src="../static/img/ice.jpg" width="120%" alt="">
+                 <a href="{{ url_for('order') }}">Order Now</a>
+            </div>
+    
+        </div>
+        
+    </div>
+    <div class="contain">
+        <div class="box">
+            <div class="icon"></div>
+            <div class="content">
+                <h3>Veggie Special</h3>
+                <img src="../static/img/vigie.png" width="120%" alt="">
+                <a href="{{ url_for('order') }}">Order Now</a>
+            </div>
+    
+        </div>
+        <div class="box">
+            <div class="icon"></div>
+            <div class="content">
+                <h3>Delux Chees Bugguer</h3>
+                <img src="../static/img/delux.jpg" width="120%" alt="">
+                 <a href="{{ url_for('order') }}">Order Now</a>
+            </div>
+    
+        </div>
+        <div class="box">
+            <div class="icon"></div>
+            <div class="content">
+                <h3>Bacon pizza</h3>
+                <img src="../static/img/Bacon.jpg" width="120%" alt=""> 
+                 <a href="{{ url_for('order') }}">Order Now</a>
+            </div>
+    
+        </div>
+        
+    </div>
+    <div class="contain">
+        <div class="box">
+            <div class="icon"></div>
+            <div class="content">
+                <h3>Flavored pizza crust</h3>
+               <img src="../static/img/flavor.jpg" width="70%" alt="">
+                <a href="{{ url_for('order') }}">Order Now</a>
+            </div>
+    
+        </div>
+        <div class="box">
+            <div class="icon"></div>
+            <div class="content">
+                <h3>Aromatic Pizza</h3>
+                <img src="../static/img/aromatic.jpg" width="120%" alt="">
+                 <a href="{{ url_for('order') }}">Order Now</a>
+            </div>
+    
+        </div>
+        <div class="box">
+            <div class="icon"></div>
+            <div class="content">
+                <h3>Chicago Peproni</h3>
+                <img src="../static/img/chikago.jpeg" width="120%" alt="">
+                 <a href="{{ url_for('order') }}">Order Now</a>
+            </div>
+    
+        </div>
+        
+    </div>
+</div>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+    .container-fluid{
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        display:  flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .contain{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .box{
+        position: relative;
+        width: 350px;
+        padding: 40px;
+        background: #fff;
+        box-shadow: 5px 5px 15px rgba(0,0,0,.3);
+        border-radius: 4px;
+        margin: 20px;
+        box-sizing: border-box;
+        overflow: hidden;
+        text-align: center;
+    }
+    .contain .box::before{
+        content: '';
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(255, 255, 255, .2);
+        z-index: 2;
+        pointer-events: none;
+    }
+    .contain .box .icon{
+        position: relative;
+        width: 80px;
+        height: 80px;
+        color: #fff;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        border-radius: 50%;
+        font-size: 40px;
+        font-weight: 700;
+        transition: 1s;
+    }
+    .contain .box:nth-child(1) .icon{
+        box-shadow: 0 0 0 0 #e91e63;
+        /* background-color: #fff; */
+    }
+    .contain .box:nth-child(1):hover .icon{
+        box-shadow: 0 0 0 400px #e91e63;
+    }
+    .contain .box:nth-child(2) .icon{
+        box-shadow: 0 0 0 0 016caa;
+        /* background-color: #fff; */
+    }
+    .contain .box:nth-child(2):hover .icon{
+        box-shadow: 0 0 0 400px #016caa;
+    }
+    .contain .box:nth-child(3) .icon{
+        box-shadow: 0 0 0 0 #04c90e;
+        /* background-color: #fff; */
+    }
+    .contain .box:nth-child(3):hover .icon{
+        box-shadow: 0 0 0 400px #04c90e;
+    }
+    .contain .box .content{
+        position: relative;
+        z-index: 1;
+        transition: .5s;
+    }
+    .contain .box:hover .content{
+        color: #fff;
+    }
+    .contain .box .content h3{
+        font-size: 20px;
+        margin: 10px 0;
+        padding: 0;
+    }
+    .contain a{
+        display: inline-block;
+        padding: 10px 20px;
+        background: #fff;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #000;
+        font-weight: 500;
+        margin-top: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+</style>
 {% endblock %}
